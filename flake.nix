@@ -35,6 +35,12 @@
               rustup component add rust-analyzer
             fi
 
+            # Set up Rust formatter
+            if ! rustup component list --installed | grep -q "rustfmt"; then
+              echo "🔧 Installing rustfmt...";
+              rustup component add rustfmt
+            fi
+
             echo "🐚 Rust environment ready! 🦀"
           '';
         };
