@@ -3,9 +3,8 @@ use embedded_hal::delay::DelayNs; // for timing
 use embedded_hal::i2c::{I2c, SevenBitAddress}; // for i2c abstraction
 
 // internal
+use crate::dht_reading::DHTReading;
 use crate::utils::{compute_crc8, convert_humidity, convert_temperature, extract_readings};
-use crate::dht_reading::DHTReading; 
-
 
 #[derive(Debug)]
 pub enum DHT20Error<E> {

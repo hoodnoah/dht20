@@ -5,5 +5,5 @@
 extern crate std; // to permit testing in non-embedded environment
 
 pub mod dht20; // main dht20 module
-mod utils; // utility functions for dht20
 mod dht_reading;
+mod utils; // utility functions for dht20

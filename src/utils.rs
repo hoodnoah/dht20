@@ -2,8 +2,7 @@
 const CRC8_INITIAL: u8 = 0xFF;
 const CRC8_POLYNOMIAL: u8 = 0x31; // CRC[7:0] = 1 + X^4 + X^5 + X^8
 
-/// Computes the CRC-8/NRSC-5 checksum for the given data, an array of bytes.
-///
+// Computes the CRC-8/NRSC-5 checksum for the given data, an array of bytes.
 pub fn compute_crc8(data: &[u8]) -> u8 {
     let mut crc = CRC8_INITIAL;
 
