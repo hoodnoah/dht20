@@ -34,7 +34,7 @@ Here's a basic example of how to use the library:
 // use a delay implementation which is compatible with the HAL `DelayNs` trait (HAL 1.0)
 use esp_hal::{delay::Delay, main};
 
-// use the `println!` macro to print messages to the serial console
+// simple `println!` macro to print messages to the serial console
 use esp_println::println;
 
 use dht20::Dht20;
