@@ -2,6 +2,18 @@
 name = "hoodn-dht20"
 version = "0.1.0"
 edition = "2024"
+authors = ["Noah Hood hood.noah@icloud.com"]
+description = "A `no_std` Rust driver for the DHT20 temperature and humidity sensor."
+license = "MIT"
+repository = "https://github.com/hoodnoah/dht20"
+documentation = "https://docs.rs/hoodn-dht20"
+readme = "README.md"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["sensor", "i2c", "humidity", "temperature", "embedded-hal"]
 
 [dependencies]
 embedded-hal = "1.0"
+
+[lib]
+name = "dht20"
+path = "src/lib.rs"
