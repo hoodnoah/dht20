@@ -1,0 +1,22 @@
+name: Publish Crate
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Publish to registry
+        uses: katyo/publish-crates@v2
+        with:
+          token: ${{ secrets.CARGO_REGRISTRY_TOKEN }}
