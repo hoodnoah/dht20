@@ -1,10 +1,10 @@
 #[derive(Debug)]
-pub struct DHTReading {
+pub struct SensorReading {
     temperature: f32, // represented internally in Celsius
     humidity: f32,    // represented internally as percentage
 }
 
-impl DHTReading {
+impl SensorReading {
     // constructor for DHTReading struct
     pub fn new(temperature: f32, humidity: f32) -> Self {
         Self {
@@ -15,6 +15,7 @@ impl DHTReading {
 
     // getter for humidity
     // returns the humidity as a percentage; e.g. 60.0 for 60%.
+    // applicable values are 0% to 100%.
     pub fn humidity(&self) -> f32 {
         self.humidity
     }
@@ -38,7 +39,7 @@ mod tests {
 
     #[test]
     fn test_dht_reading() {
-        let reading = DHTReading::new(25.0, 60.0);
+        let reading = SensorReading::new(25.0, 60.0);
         assert_eq!(reading.temperature_celsius(), 25.0);
         assert_eq!(reading.temperature_fahrenheit(), 77.0);
         assert_eq!(reading.humidity(), 60.0);

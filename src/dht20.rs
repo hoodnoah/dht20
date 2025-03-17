@@ -3,7 +3,7 @@ use embedded_hal::delay::DelayNs; // for timing
 use embedded_hal::i2c::{I2c, SevenBitAddress}; // for i2c abstraction
 
 // internal
-use crate::dht_reading::DHTReading;
+use crate::sensor_reading::SensorReading;
 use crate::utils::{compute_crc8, convert_humidity, convert_temperature, extract_readings};
 
 #[derive(Debug)]
@@ -57,7 +57,10 @@ where
 
     // request a reading from the sensor
     // returns a DHTReading struct containing the temperature and humidity
-    pub fn take_reading<D: DelayNs>(&mut self, delay: &mut D) -> Result<DHTReading, DHT20Error<E>> {
+    pub fn take_reading<D: DelayNs>(
+        &mut self,
+        delay: &mut D,
+    ) -> Result<SensorReading, DHT20Error<E>> {
         if !self.initialized {
             return Err(DHT20Error::NotInitialized);
         }
@@ -76,7 +79,7 @@ where
         let temperature = convert_temperature(raw_temperature);
 
         // return the readings as a DHTReading struct
-        Ok(DHTReading::new(temperature, humidity))
+        Ok(SensorReading::new(temperature, humidity))
     }
 
     pub fn read_raw<D: DelayNs>(&mut self, delay: &mut D) -> Result<[u8; 6], DHT20Error<E>> {
