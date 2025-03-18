@@ -1,7 +1,7 @@
 [package]
-name = "hoodn-dht20"
+name = "hoodn_dht20"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 authors = ["Noah Hood hood.noah@icloud.com"]
 description = "A `no_std` Rust driver for the DHT20 temperature and humidity sensor."
 license = "MIT"
