@@ -14,7 +14,7 @@ Add `dht20` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-dht20 = {version = "0.1.0", package = "hoodn-dht20"}
+dht20 = {version = "0.1.0", package = "nhood-dht20"}
 ```
 
 Then, include it in your project:
