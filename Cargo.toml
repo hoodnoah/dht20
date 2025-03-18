@@ -1,5 +1,5 @@
 [package]
-name = "nhood-dht20"
+name = "dht20-rs"
 version = "0.1.0"
 edition = "2021"
 authors = ["Noah Hood hood.noah@icloud.com"]

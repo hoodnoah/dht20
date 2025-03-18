@@ -14,13 +14,13 @@ Add `dht20` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-dht20 = {version = "0.1.0", package = "nhood-dht20"}
+dht20-rs = {version = "0.1.0"}
 ```
 
 Then, include it in your project:
 
 ```rust
-use dht20;
+use dht20_rs;
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ use esp_hal::{delay::Delay, main};
 // simple `println!` macro to print messages to the serial console
 use esp_println::println;
 
-use dht20::Dht20;
+use dht20_rs::Dht20;
 
 #[main]
 fn main() -> ! {
